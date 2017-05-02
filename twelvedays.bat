@@ -23,15 +23,7 @@ if "%*" == "" (
 if NOT "%*" == "" (
  set day=%1
 )
-if exist %0 (
- set filename=%0
-) else (
- if exist %0.bat (
-  set filename=%0.bat
- ) else (
-  set filename=%0.cmd
- )
-)
+set filename="%~f0"
 if !day! GEQ 1 (
  if !day! LEQ 12 (
   if !day! == 1 set suffix=st
